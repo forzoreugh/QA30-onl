@@ -100,42 +100,36 @@ public class Main {
         int num1 = 3;
         int num2 = 10;
         System.out.println("Умножение num1 на num2 = " + (num1 *= num2));
+        casting();
+    }
+
+    /*
+    Приведение типов бывает: (1) Автоматическое (2) Принудительное
+    (1) Комплитор сам может расширить значение, две и более переменных должны иметь пространство и тип данных
+    (2) При сужении данных требуется принудить комплиятор сделать это
+    */
+    public static void casting() {
+
+        // (1)
+        byte yourByte = 127;
+        int yourInt = yourByte;
+       // long yourLong = yourInt; (также сработает)
+        double yourDouble = yourInt; // byte < int < double, поэтому сделает автоматически
+        System.out.println("Автоматическое расширение = " + yourDouble);
+
+        // (2)
+        long myLong = 1_000_000_000L;
+        int myInt = (int) myLong; // без принудительного (int) сужение не сработает
+        System.out.println("Сужение данных = " + myInt);
+
+        int myAge = 23;
+        String stringAge = String.valueOf(myAge); // из integer в string через данный метод
+        System.out.println("Сколько мне лет? Ответ = " + stringAge);
+        int stringAgeConverted = Integer.parseInt(stringAge); // из string в integer
+        System.out.println("Сколько мне лет? Ответ = " + stringAgeConverted);
+
+        boolean isAlive = true; // данный тип нельзя привести к чему-либо
+
     }
 }
-
-
-
-
-public static void casting(){
-    // Приведение типов
-    // 1. Автоматическое
-    // 1.1. Когда компилятор может самостоятельно расширить значение, для этого две или более переменные
-    // должны иметь достаточное пространство и тип данных
-    short value = 31_456;
-    int intValue = value; // автоматическое расширение типа, потому что значение типа short может свободно уложиться
-    // в тип данных int
-    long myLong = intValue; // int меньше по размеру и меньше по данным нежели long, поэтому автоматически сделает
-
-    double myDouble = intValue; // double 8 bytes и может свободно хранить значения типа int
-
-    // 2. Принудительное
-    double doubleBigValue = 34_568;
-    int storeDouble = (int) doubleBigValue; // когда идет сужение данных от большего к наименьшему я обязан
-    // это принудить сделать компилятор
-
-    // 56.567 (int) 56
-
-    // Есть типы, которые нельзя ни к чему привести
-    boolean isAlive = true;
-    // MISTAKE: int booleanValue = (int) isAlive;
-
-    int age = 36;
-    // Из целого числа в строчку можно лишь через специальный метод
-    // String name = 35; -> MISTAKE
-    // From Integer to String
-    String stringAge = String.valueOf(age);
-    // From String to Integer
-    int stringAgeConverted = Integer.parseInt(stringAge);
-}
-
 
