@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Homework3 {
     public static void main(String[] args) {
-        taskLoops6();
+        taskDop3();
     }
 
     public static Scanner input() {
@@ -171,4 +171,48 @@ public class Homework3 {
             System.out.println(number3);
         }
     }
-}
+
+    public static void taskDop1() {
+        int x = 1;
+        int y = 0;
+        int z = 10;
+        int summ;
+        System.out.println(y);
+        for (int i = 0; i < z; i++) {
+            summ = x + y;
+            x = y;
+            y = summ;
+            System.out.println(summ);
+        }
+    }
+
+    public static void taskDop2() {
+
+        System.out.print("Введите сумму взноса: ");
+        float sum = input().nextFloat();
+        System.out.print("Количество месяцев: ");
+        int months = input().nextInt();
+        float getTotalAmount = 0;
+
+
+        for (int mont = 1; mont <= months; mont++) {
+            getTotalAmount = (float)(sum * 0.07) + sum;
+         sum = getTotalAmount;
+        }
+        System.out.print(getTotalAmount);
+    }
+
+    public static void taskDop3() {
+        int max = 10;
+        int multiplication;
+        for (int x = 1; x < max; x++) {
+            for (int y = 1; y < max; y++) {
+                multiplication = x * y;
+                System.out.println(x + "*" + y + "=" + multiplication);
+            }
+
+        }
+
+    }
+
+    }
