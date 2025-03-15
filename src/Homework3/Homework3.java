@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Homework3 {
     public static void main(String[] args) {
-        taskDop3();
+        taskDop1();
         // TaskOperators1 - 5, taskLoops1 - 3, taskDop1 - 3
     }
 
