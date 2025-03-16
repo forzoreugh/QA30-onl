@@ -1,13 +1,14 @@
 package Homework4;
 
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.Math;
 
 public class Homework4 {
     public static void main(String[] args) {
-        getTask1();
+        getTask0();
+        // getTask0 - 3, getDopTask4 - 7
     }
 
     public static Scanner input() {
@@ -33,10 +34,10 @@ public class Homework4 {
 
     public static void getTask1() {
 
-        int massive[] = new int [] {1, 3, 5, 7, 9, 11};
+        int massive[] = new int[]{1, 3, 1, 7, 9, 11};
         boolean isTrue = false;
 
-        System.out.println("Введи число и я удалю его из массива: ");
+        System.out.print("Введи число и я удалю его из массива: ");
         int number = new Scanner(System.in).nextInt();
 
         for (int index = 0; index < massive.length; index++) {
@@ -51,9 +52,6 @@ public class Homework4 {
         }
     }
 
-
-
-
     public static void getTask2() {
 
         Random randomValues = new Random();
@@ -63,7 +61,7 @@ public class Homework4 {
 
         int massive[] = new int[getSize];
         for (int index = 0; index < massive.length; index++) {
-            massive[index] = randomValues.nextInt(1, 100);
+            massive[index] = (int) (Math.random() * getSize);
             System.out.print(massive[index] + "\t");
         }
         int min = massive[0];
@@ -112,5 +110,70 @@ public class Homework4 {
             System.out.println("Бред какой-то..");
         }
     }
+
+    public static void getDopTask4() {
+
+        for (int index = 0; ; index++) {
+            System.out.print("Установи размер массива: ");
+            int getSizeMassive = new Scanner(System.in).nextInt();
+            int massive[] = new int[getSizeMassive];
+            if (getSizeMassive > 5 && getSizeMassive <= 10) {
+                for (int index1 = 0; index1 < massive.length; index1++) {
+                    massive[index1] = (int) (Math.random() * getSizeMassive);
+                    System.out.print(massive[index1] + "\t");
+                }
+                System.out.println();
+                for (int x : massive) {
+                    if (x % 2 == 0) {
+                        System.out.print(x + "\t");
+                    }
+                }
+                break;
+            } else {
+                System.out.println("Неверное условие для ввода. Повтори попытку еще раз.");
+            }
+        }
+    }
+
+    public static void getDopTask5() {
+        int massive[] = new int[]{1, 3, 5, 7, 9};
+        for (int index1 = 0; index1 < massive.length; index1++) {
+            System.out.print(massive[index1] + "\t");
+        }
+        System.out.println();
+        for (int index = 0; index < massive.length; index++) {
+                if (index % 2 == 1 ) {
+                    massive[index] = 0;
+                }
+                System.out.print(massive[index] + "\t");
+            }
+        }
+
+
+    public static void getDopTask6() {
+        String names [] = new String [] { "Artsiom", "Irina", "Yuriy", "Arina", "Vladislav", "Archil"};
+for (int index = 0; index < names.length; index++) {
+    Arrays.sort(names);
+    System.out.println(names[index]);
+
 }
+    }
+
+    public static void getDopTask7() {
+        int numbers [] = new int [] {1, 55, 3, 22, 103, 122};
+
+        for (int index = 0; index < numbers.length; index++) {
+            for (int index1 = 0; index1 < numbers.length - 1 - index; index1++) {
+                if (numbers[index1] > numbers[index1 + 1]) {
+                    int num = numbers[index1];
+                    numbers[index1] = numbers[index1 + 1];
+                    numbers[index1 + 1] = num;
+
+                }
+            }
+        } System.out.println(Arrays.toString(numbers));
+
+    }
+        }
+
 
