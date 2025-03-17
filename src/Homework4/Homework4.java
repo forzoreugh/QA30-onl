@@ -171,9 +171,9 @@ for (int index = 0; index < names.length; index++) {
 
                 }
             }
-        } System.out.println(Arrays.toString(numbers));
-
-    }
         }
+        System.out.println(Arrays.toString(numbers));
+    }
+}
 
 
