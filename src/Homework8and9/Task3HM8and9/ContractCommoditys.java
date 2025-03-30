@@ -1,4 +1,4 @@
-package Homework8.Task3;
+package Homework8and9.Task3HM8and9;
 
 import java.util.Date;
 
@@ -6,7 +6,8 @@ public class ContractCommoditys extends Document {
     protected String typeCommoditys;
     protected int countCommoditys;
 
-    public ContractCommoditys(String numDoc, Date dateDoc, String typeCommoditys, int countCommoditys){
+    public ContractCommoditys(String numDoc, Date dateDoc, String typeCommoditys, int countCommoditys)
+            throws  DocNumbException{
         super(numDoc, dateDoc);
         this.typeCommoditys = typeCommoditys;
         this.countCommoditys = countCommoditys;

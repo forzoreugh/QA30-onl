@@ -1,4 +1,4 @@
-package Homework8.Task3;
+package Homework8and9.Task3HM8and9;
 
 public class Register {
     private int count;

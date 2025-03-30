@@ -1,4 +1,4 @@
-package Homework8.Task2;
+package Homework8and9.Task2HM8;
 
 public class Accountant implements InterfaceTask2 {
     private String job = "Бухгалтер";
